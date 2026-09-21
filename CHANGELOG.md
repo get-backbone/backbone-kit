@@ -1,3 +1,9 @@
+## v1.2.0 (2026-09-21)
+
+### Feat
+
+- **release**: 2.0.0 now publishing as io.backbonehq to both mvn central and ghp
+
 ## v1.1.2 (2026-09-21)
 
 ### Fix
