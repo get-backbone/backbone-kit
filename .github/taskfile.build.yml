@@ -39,15 +39,8 @@ tasks:
     cmds:
       - '{{.MAVEN_CMD}} install -Dmaven.test.skip'
 
-  deploy:
-    desc: Deploy to Maven Central then GitHub Packages; skips all tests
-    dir: "{{.ROOT_DIR}}"
-    cmds:
-      - task: deploy-central
-      - task: deploy-github
-
   deploy-central:
-    desc: Deploy to Maven Central (Portal); skips all tests
+    desc: Deploy to Maven Central; skips all tests
     dir: "{{.ROOT_DIR}}"
     cmds:
       - '{{.MAVEN_CMD}} deploy -Pcentral -Dmaven.test.skip'
