@@ -8,6 +8,7 @@
     </parent>
 
     <artifactId>backbone-observability-api</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
     <description>Prometheus remote-write encoding (PRW 1.0) for Micrometer MetricSnapshots.</description>
 
     <properties>

@@ -8,6 +8,7 @@
     </parent>
 
     <artifactId>backbone-http-aws</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
     <description>AWS SigV4-signed HTTP transport for AMP, X-Ray OTLP, and other signed endpoints.</description>
 
     <dependencies>

@@ -8,6 +8,7 @@
     </parent>
 
     <artifactId>backbone-observability-aws</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
     <description>AWS observability exporters: AMP remote write and X-Ray OTLP with SigV4.</description>
 
     <dependencies>
