@@ -1,3 +1,9 @@
+## v1.1.1 (2026-09-21)
+
+### Fix
+
+- **pom**: set explicit name on all modules for Central
+
 ## v1.1.0 (2026-09-21)
 
 ### Feat
