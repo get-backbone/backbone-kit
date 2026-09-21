@@ -1,3 +1,9 @@
+## v1.1.2 (2026-09-21)
+
+### Fix
+
+- **ghp**: re-enabling ghp now that mvn central is working
+
 ## v1.1.1 (2026-09-21)
 
 ### Fix
