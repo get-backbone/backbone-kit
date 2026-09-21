@@ -1,3 +1,13 @@
+## v2.0.0 (2026-09-21)
+
+### BREAKING CHANGE
+
+- gav migration from io.backbone to io.backbonehq
+
+### Feat
+
+- **release**: 2.0.0 now publishing as io.backbonehq to both mvn central and ghp
+
 ## v1.2.0 (2026-09-21)
 
 ### Feat
