@@ -45,7 +45,7 @@ jobs:
           </settings>
           EOF
       - run: task build:deploy-central
-#      - run: task build:deploy-github
+      - run: task build:deploy-github
         env:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - run: .github/scripts/publish-summary.sh
