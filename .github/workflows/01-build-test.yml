@@ -47,9 +47,9 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: maven-repo
-          path: ~/.m2/repository/io/backbone
+          path: ~/.m2/repository/io/backbonehq
           retention-days: 1
-          if-no-files-found: warn
+          if-no-files-found: error
 
   unit-test:
     runs-on: ubuntu-latest
@@ -66,7 +66,7 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           name: maven-repo
-          path: ~/.m2/repository/io/backbone
+          path: ~/.m2/repository/io/backbonehq
       - run: task build:unit-test -- -Dtest.thread.count=2
       - if: always()
         uses: actions/upload-artifact@v7
@@ -89,7 +89,7 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           name: maven-repo
-          path: ~/.m2/repository/io/backbone
+          path: ~/.m2/repository/io/backbonehq
       - run: task build:integration-test -- -Dtest.thread.count=2
       - if: always()
         uses: actions/upload-artifact@v7

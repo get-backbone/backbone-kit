@@ -1,1 +1,1 @@
-backbone-impl/backbone-logging/src/test/java/io/backbone/kit/logging/impl/SensitiveLogMaskerTest\.java
+backbone-impl/backbone-logging/src/test/java/io/backbonehq/kit/logging/impl/SensitiveLogMaskerTest\.java
