@@ -19,5 +19,7 @@ cat >> "$GITHUB_STEP_SUMMARY" <<EOF
 
 **Version:** \`${VERSION}\` (tag: \`v${VERSION}\`)
 
-Packages published to GitHub Package Registry.
+Deployed to:
+- Maven Central
+- GitHub Packages
 EOF

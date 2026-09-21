@@ -32,4 +32,4 @@ jobs:
           restore-keys: |
             dependency-check-${{ runner.os }}-
 
-      - run: task build:sa
+      - run: task build:static-analysis

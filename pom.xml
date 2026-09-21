@@ -7,18 +7,38 @@
     <version>1.0.1</version>
     <packaging>pom</packaging>
 
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Quarkus-based infrastructure components for security, observability, and cross-cutting service concerns.</description>
+    <url>https://github.com/get-backbone/backbone-kit</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Andrew Eells</name>
+            <url>https://github.com/aeells</url>
+            <organization>Backbone</organization>
+            <organizationUrl>https://backbonehq.io/</organizationUrl>
+        </developer>
+    </developers>
+
     <modules>
         <module>backbone-api</module>
         <module>backbone-impl</module>
     </modules>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/get-backbone/backbone-kit</url>
-        </repository>
-    </distributionManagement>
+    <scm>
+        <connection>scm:git:https://github.com/get-backbone/backbone-kit.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/get-backbone/backbone-kit.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/get-backbone/backbone-kit</url>
+    </scm>
 
     <properties>
         <!--suppress UnresolvedMavenProperty -->
@@ -44,12 +64,16 @@
         <maven.deploy.version>3.1.4</maven.deploy.version>
         <maven.enforcer.version>3.6.2</maven.enforcer.version>
         <maven.failsafe.version>3.5.5</maven.failsafe.version>
+        <maven.gpg.version>3.2.8</maven.gpg.version>
+        <maven.javadoc.version>3.12.0</maven.javadoc.version>
         <maven.min.version>3.9.9</maven.min.version>
         <maven.os.version>1.7.1</maven.os.version>
         <maven.protobuf.version>0.6.1</maven.protobuf.version>
+        <maven.source.version>3.3.1</maven.source.version>
         <maven.spotless.version>3.4.0</maven.spotless.version>
         <maven.surefire.version>3.5.5</maven.surefire.version>
         <maven.versions.version>2.21.0</maven.versions.version>
+        <central.publishing.version>0.11.0</central.publishing.version>
         <jandex.version>3.5.3</jandex.version>
 
         <!-- Profile plugin versions -->
@@ -209,6 +233,38 @@
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>${maven.build.helper.version}</version>
                 </plugin>
+
+                <!-- distribution -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven.source.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven.javadoc.version}</version>
+                    <configuration>
+                        <doclint>none</doclint>
+                        <quiet>true</quiet>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven.gpg.version}</version>
+                    <configuration>
+                        <gpgArguments>
+                            <arg>--pinentry-mode</arg>
+                            <arg>loopback</arg>
+                        </gpgArguments>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${central.publishing.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -299,6 +355,91 @@
     </build>
 
     <profiles>
+        <!-- Maven Central via Portal plugin. Deploy: mvn deploy -Pcentral (manual Publish in Portal until autoPublish enabled). -->
+        <profile>
+            <id>central</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <!-- First Central cut: validate in Portal, then Publish manually. Flip for CI later. -->
+                            <autoPublish>false</autoPublish>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- GitHub Packages (existing consumers). Deploy: mvn deploy -Pgithub. Skip sources/javadoc — public repo is the source of truth. -->
+        <profile>
+            <id>github</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/get-backbone/backbone-kit</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
         <profile>
             <id>spotless</id>
             <!-- Profile never auto-activates - only used when explicitly invoked -->

@@ -18,11 +18,24 @@ jobs:
         with:
           fetch-depth: 0  # Needed for commit range checks
           ref: main  # check out the branch, not detached HEAD
+      # Same key as 03-release-bump (git signing). Here it signs Maven artifacts (.asc) for Central + GHP.
+      # Repo secrets: GPG_PRIVATE_KEY (armoured or base64), GPG_PASSPHRASE
+      # Central Portal token: CENTRAL_USERNAME / CENTRAL_PASSWORD (server id `central`)
+      # GHP: PAT_BACKBONE_DEPLOY (server id `github`)
+      - uses: crazy-max/ghaction-import-gpg@v7
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - uses: ./.github/actions/tools
       - run: |
           cat > ~/.m2/settings.xml <<EOF
           <settings>
             <servers>
+              <server>
+                <id>central</id>
+                <username>${{ secrets.CENTRAL_USERNAME }}</username>
+                <password>${{ secrets.CENTRAL_PASSWORD }}</password>
+              </server>
               <server>
                 <id>github</id>
                 <username>get-backbone</username>
@@ -32,4 +45,6 @@ jobs:
           </settings>
           EOF
       - run: task build:deploy
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - run: .github/scripts/publish-summary.sh

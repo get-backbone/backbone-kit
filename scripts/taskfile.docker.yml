@@ -9,7 +9,6 @@ tasks:
 
   docker-status:
     desc: "Show status of localstack, jaeger and postgres containers"
-    aliases: [ d, d:status, docker ]
     cmds:
       - docker/status.sh localstack jaeger postgres
 
@@ -19,19 +18,16 @@ tasks:
 
   postgres-start:
     desc: Postgres start
-    aliases: [ p:start ]
     cmds:
       - docker/services.sh start postgres
 
   postgres-seed:
     desc: Postgres seed performance test users
-    aliases: [ p:seed ]
     cmds:
       - docker/postgres-seed.sh
 
   postgres-stop:
     desc: Postgres stop
-    aliases: [ p:stop ]
     cmds:
       - docker/services.sh stop postgres
 
@@ -41,13 +37,11 @@ tasks:
 
   jaeger-start:
     desc: Dev OpenTelemetry Collector + Jaeger UI start
-    aliases: [ j:start ]
     cmds:
       - docker/services.sh start jaeger
 
   jaeger-stop:
     desc: Dev OpenTelemetry Collector + Jaeger UI stop
-    aliases: [ j:stop ]
     cmds:
       - docker/services.sh stop jaeger
 
@@ -56,18 +50,15 @@ tasks:
   ##################################
   localstack-start:
     desc: Dev localstack start
-    aliases: [ l:start ]
     cmds:
       - docker/services.sh start localstack
 
   localstack-seed:
     desc: Dev localstack seed
-    aliases: [ l:seed ]
     cmds:
       - docker/localstack-seed.sh
 
   localstack-stop:
     desc: Dev localstack stop
-    aliases: [ l:stop ]
     cmds:
       - docker/services.sh stop localstack

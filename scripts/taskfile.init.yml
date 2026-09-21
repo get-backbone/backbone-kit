@@ -13,7 +13,6 @@ tasks:
 
   script-template:
     desc: Create a new script from template
-    aliases: [ script, template, new ]
     cmds:
       - lib/template-helper.sh {{.CLI_ARGS}}
 
@@ -23,7 +22,6 @@ tasks:
 
   dotenvrc:
     desc: Dev .envrc and shell setup
-    aliases: [ env ]
     dir: "{{.TASKFILE_DIR}}/.."
     cmds:
       - scripts/init/dotenvrc.sh

@@ -28,11 +28,9 @@
 
 ## Overview
 
-**Backbone Kit** is a collection of infrastructure components that support 👉 **[Backbone](https://backbonehq.io)**.
+**Backbone Kit** is a collection of Quarkus-based infrastructure components for security, observability, and cross-cutting service concerns — without polluting domain logic.
 
-It provides Quarkus-based components for security, observability, and cross-cutting service concerns — without prescribing domain logic.
-
-Backbone Kit demonstrates the following capabilities that continue with the full Backbone Platform: 
+Backbone Kit demonstrates the following capabilities that continue with the full  👉 **[Backbone](https://backbonehq.io)** platform: 
 - architectural composure and separation of concerns
 - implementation of microservice cross-cutting concerns
 - disciplined coding standards, documentation, and test organisation

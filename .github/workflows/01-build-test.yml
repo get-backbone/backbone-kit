@@ -67,7 +67,7 @@ jobs:
         with:
           name: maven-repo
           path: ~/.m2/repository/io/backbone
-      - run: task build:ut -- -Dtest.thread.count=2
+      - run: task build:unit-test -- -Dtest.thread.count=2
       - if: always()
         uses: actions/upload-artifact@v7
         with:
@@ -90,7 +90,7 @@ jobs:
         with:
           name: maven-repo
           path: ~/.m2/repository/io/backbone
-      - run: task build:it -- -Dtest.thread.count=2
+      - run: task build:integration-test -- -Dtest.thread.count=2
       - if: always()
         uses: actions/upload-artifact@v7
         with:
