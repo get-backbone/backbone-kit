@@ -1,3 +1,19 @@
+## v1.1.0 (2026-09-21)
+
+### Feat
+
+- prepare Maven Central dual-publish profiles
+
+### Fix
+
+- **ci**: suppress snappy-java CVE-2026-90559 pending upstream fix
+- **ci**: update SpotBugs excludes for io.backbonehq packages
+- **ci**: point maven-repo artifact at io.backbonehq
+
+### Refactor
+
+- rename Java packages to io.backbonehq
+
 ## v1.0.1 (2026-08-15)
 
 ### Fix
