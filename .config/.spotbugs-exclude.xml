@@ -2,23 +2,22 @@
 <FindBugsFilter>
     <!-- Exclude generated protobuf classes (e.g. backbone-observability-api target/generated-sources/protobuf) -->
     <Match>
-        <Package name="~io\.backbone\.kit\.observability\.api\.remotewrite" />
+        <Package name="~io\.backbonehq\.kit\.observability\.api\.remotewrite" />
     </Match>
     <Match>
-        <Class name="io.backbone.kit.health.impl.infrastructure.CognitoHealthCheck"/>
+        <Class name="io.backbonehq.kit.health.impl.infrastructure.CognitoHealthCheck"/>
         <Bug pattern="EI_EXPOSE_REP2"/>
     </Match>
     <Match>
-        <Class name="io.backbone.kit.health.impl.infrastructure.DynamoDbHealthCheck"/>
+        <Class name="io.backbonehq.kit.health.impl.infrastructure.DynamoDbHealthCheck"/>
         <Bug pattern="EI_EXPOSE_REP2"/>
     </Match>
     <Match>
-        <Class name="io.backbone.kit.health.impl.infrastructure.S3HealthCheck"/>
+        <Class name="io.backbonehq.kit.health.impl.infrastructure.S3HealthCheck"/>
         <Bug pattern="EI_EXPOSE_REP2"/>
     </Match>
     <Match>
-        <Class name="io.backbone.kit.metrics.impl.faulttolerance.recorder.CircuitBreakerMetricsRecorder"/>
+        <Class name="io.backbonehq.kit.metrics.impl.faulttolerance.recorder.CircuitBreakerMetricsRecorder"/>
         <Bug pattern="EI_EXPOSE_REP2"/>
     </Match>
 </FindBugsFilter>
-
