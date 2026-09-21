@@ -41,9 +41,9 @@ Add the dependency:
 
 ```xml
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-http-aws</artifactId>
-  <version>${io.backbone.version}</version>
+  <version>${io.backbonehq.version}</version>
 </dependency>
 ```
 
@@ -73,7 +73,7 @@ AwsSignedHttpResponse response = transport.send(
 
 Reference implementations:
 
-- [`AwsSignedHttpTransport`](src/main/java/io/backbone/kit/http/aws/AwsSignedHttpTransport.java) — SigV4 signing and HTTP execution
-- [`SignedHttpTransport`](src/main/java/io/backbone/kit/http/aws/SignedHttpTransport.java) — transport contract consumed by exporters
+- [`AwsSignedHttpTransport`](src/main/java/io/backbonehq/kit/http/aws/AwsSignedHttpTransport.java) — SigV4 signing and HTTP execution
+- [`SignedHttpTransport`](src/main/java/io/backbonehq/kit/http/aws/SignedHttpTransport.java) — transport contract consumed by exporters
 
 ---

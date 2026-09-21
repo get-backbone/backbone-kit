@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.backbone</groupId>
+        <groupId>io.backbonehq</groupId>
         <artifactId>backbone-impl</artifactId>
         <version>1.0.1</version>
     </parent>
@@ -12,13 +12,13 @@
     <dependencies>
         <!-- backbone apis -->
         <dependency>
-            <groupId>io.backbone</groupId>
+            <groupId>io.backbonehq</groupId>
             <artifactId>backbone-logging-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- backbone impl -->
         <dependency>
-            <groupId>io.backbone</groupId>
+            <groupId>io.backbonehq</groupId>
             <artifactId>backbone-common</artifactId>
             <version>${project.version}</version>
         </dependency>

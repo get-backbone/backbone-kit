@@ -1,4 +1,4 @@
-package io.backbone.kit.examples.common;
+package io.backbonehq.kit.examples.common;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;

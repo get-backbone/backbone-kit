@@ -80,9 +80,9 @@ This module uses **provided scope** for all dependencies. Your application must 
 
 ```xml
 <dependency>
-    <groupId>io.backbone</groupId>
+    <groupId>io.backbonehq</groupId>
     <artifactId>backbone-health</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 

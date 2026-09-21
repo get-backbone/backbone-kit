@@ -78,7 +78,7 @@ rate-limit.unauthenticated-refill-per-second=1000
 See: [examples/backbone-throttle](../../examples/backbone-throttle) for configuration examples.
 
 See the reference implementation:
-- [`ReferenceRateLimitingFilter`](../backbone-throttle/src/main/java/io/backbone/kit/throttle/impl/reference/ReferenceRateLimitingFilter.java) -
+- [`ReferenceRateLimitingFilter`](../backbone-throttle/src/main/java/io/backbonehq/kit/throttle/impl/reference/ReferenceRateLimitingFilter.java) -
   A production-ready rate limiting filter implementation
 
 This example demonstrates:
@@ -90,7 +90,7 @@ This example demonstrates:
 - Integration with the rate limiting infrastructure
 
 See also:
-- [`RateLimitingIT`](../backbone-throttle/src/test/java/io/backbone/kit/throttle/impl/infrastructure/RateLimitingIT.java) -
+- [`RateLimitingIT`](../backbone-throttle/src/test/java/io/backbonehq/kit/throttle/impl/infrastructure/RateLimitingIT.java) -
   Integration tests demonstrating throttling enforcement
 
 ---

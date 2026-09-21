@@ -23,7 +23,7 @@ quarkus.log.console.json.enabled=false
 
 # Category log levels
 quarkus.log.level=WARN
-quarkus.log.category."io.backbone".level=DEBUG
-%int.quarkus.log.category."io.backbone".level=INFO
-%test.quarkus.log.category."io.backbone".level=INFO
-%prod.quarkus.log.category."io.backbone".level=INFO
+quarkus.log.category."io.backbonehq".level=DEBUG
+%int.quarkus.log.category."io.backbonehq".level=INFO
+%test.quarkus.log.category."io.backbonehq".level=INFO
+%prod.quarkus.log.category."io.backbonehq".level=INFO

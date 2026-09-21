@@ -43,14 +43,14 @@ Add `backbone-logging-api` for `@LogMethodEntry` and `backbone-logging` for runt
 
 ```xml
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-logging-api</artifactId>
-  <version>${io.backbone.version}</version>
+  <version>${io.backbonehq.version}</version>
 </dependency>
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-logging</artifactId>
-  <version>${io.backbone.version}</version>
+  <version>${io.backbonehq.version}</version>
 </dependency>
 ```
 
@@ -90,9 +90,9 @@ See: [examples/backbone-logging](../../examples/backbone-logging) for configurat
 
 Reference implementations:
 
-- [`LogMethodEntryInterceptor`](src/main/java/io/backbone/kit/logging/impl/LogMethodEntryInterceptor.java) — opt-in method entry logging
-- [`CorrelationIdFilter`](src/main/java/io/backbone/kit/logging/impl/CorrelationIdFilter.java) — inbound MDC and response header propagation
-- [`CorrelationIdClientRequestFilter`](src/main/java/io/backbone/kit/logging/impl/CorrelationIdClientRequestFilter.java) — outbound REST client header forwarding
-- [`SensitiveDataLogFilter`](src/main/java/io/backbone/kit/logging/impl/SensitiveDataLogFilter.java) — log output redaction filter
+- [`LogMethodEntryInterceptor`](src/main/java/io/backbonehq/kit/logging/impl/LogMethodEntryInterceptor.java) — opt-in method entry logging
+- [`CorrelationIdFilter`](src/main/java/io/backbonehq/kit/logging/impl/CorrelationIdFilter.java) — inbound MDC and response header propagation
+- [`CorrelationIdClientRequestFilter`](src/main/java/io/backbonehq/kit/logging/impl/CorrelationIdClientRequestFilter.java) — outbound REST client header forwarding
+- [`SensitiveDataLogFilter`](src/main/java/io/backbonehq/kit/logging/impl/SensitiveDataLogFilter.java) — log output redaction filter
 
 ---

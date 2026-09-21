@@ -1,7 +1,7 @@
-package io.backbone.kit.examples.security;
+package io.backbonehq.kit.examples.security;
 
-import io.backbone.kit.security.api.rest.AllowedServices;
-import io.backbone.kit.security.api.rest.Secured;
+import io.backbonehq.kit.security.api.rest.AllowedServices;
+import io.backbonehq.kit.security.api.rest.Secured;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;

@@ -2,9 +2,9 @@
 // Source: https://prometheus.io/docs/specs/prw/remote_write_spec/
 syntax = "proto3";
 
-package io.backbone.kit.observability.api.remotewrite;
+package io.backbonehq.kit.observability.api.remotewrite;
 
-option java_package = "io.backbone.kit.observability.api.remotewrite";
+option java_package = "io.backbonehq.kit.observability.api.remotewrite";
 option java_multiple_files = true;
 
 message WriteRequest {

@@ -95,9 +95,9 @@ Add the required modules to your project:
 
 ```xml
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-throttle</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 

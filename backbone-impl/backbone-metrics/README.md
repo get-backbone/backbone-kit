@@ -105,7 +105,7 @@ See: [examples/backbone-metrics](../../examples/backbone-metrics) for code examp
 
 See the reference implementation:
 
-- [`ThrottleMetricsRecorder`](../backbone-metrics/src/main/java/io/backbone/kit/metrics/impl/domain/recorder/ThrottleMetricsRecorder.java) -
+- [`ThrottleMetricsRecorder`](../backbone-metrics/src/main/java/io/backbonehq/kit/metrics/impl/domain/recorder/ThrottleMetricsRecorder.java) -
   A production-ready example of a `MetricsRecorder` implementation that records rate-limiting metrics
 
 This example demonstrates:

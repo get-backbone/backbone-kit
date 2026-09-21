@@ -45,14 +45,14 @@ Add both the API and AWS implementation modules (plus `backbone-http-aws` transi
 
 ```xml
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-observability-api</artifactId>
-  <version>${io.backbone.version}</version>
+  <version>${io.backbonehq.version}</version>
 </dependency>
 <dependency>
-  <groupId>io.backbone</groupId>
+  <groupId>io.backbonehq</groupId>
   <artifactId>backbone-observability-aws</artifactId>
-  <version>${io.backbone.version}</version>
+  <version>${io.backbonehq.version}</version>
 </dependency>
 ```
 
@@ -112,8 +112,8 @@ Apply the same pattern for `backbone.observability.xray.export.enabled`.
 
 Reference implementations:
 
-- [`AmpMetricsExporter`](src/main/java/io/backbone/kit/observability/aws/metrics/AmpMetricsExporter.java) — scheduled AMP remote write
-- [`XRayTraceExporter`](src/main/java/io/backbone/kit/observability/aws/traces/XRayTraceExporter.java) — X-Ray OTLP export
-- [`PrometheusRemoteWriteEncoder`](../../backbone-api/backbone-observability-api/src/main/java/io/backbone/kit/observability/api/encode/PrometheusRemoteWriteEncoder.java) — PRW encoding (API module)
+- [`AmpMetricsExporter`](src/main/java/io/backbonehq/kit/observability/aws/metrics/AmpMetricsExporter.java) — scheduled AMP remote write
+- [`XRayTraceExporter`](src/main/java/io/backbonehq/kit/observability/aws/traces/XRayTraceExporter.java) — X-Ray OTLP export
+- [`PrometheusRemoteWriteEncoder`](../../backbone-api/backbone-observability-api/src/main/java/io/backbonehq/kit/observability/api/encode/PrometheusRemoteWriteEncoder.java) — PRW encoding (API module)
 
 ---

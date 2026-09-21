@@ -1,9 +1,9 @@
-package io.backbone.kit.examples.health;
+package io.backbonehq.kit.examples.health;
 
-import io.backbone.kit.health.impl.infrastructure.CognitoHealthCheck;
-import io.backbone.kit.health.impl.infrastructure.DynamoDbHealthCheck;
-import io.backbone.kit.health.impl.infrastructure.PostgresHealthCheck;
-import io.backbone.kit.health.impl.infrastructure.S3HealthCheck;
+import io.backbonehq.kit.health.impl.infrastructure.CognitoHealthCheck;
+import io.backbonehq.kit.health.impl.infrastructure.DynamoDbHealthCheck;
+import io.backbonehq.kit.health.impl.infrastructure.PostgresHealthCheck;
+import io.backbonehq.kit.health.impl.infrastructure.S3HealthCheck;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.ws.rs.Produces;

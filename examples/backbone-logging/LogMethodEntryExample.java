@@ -1,6 +1,6 @@
-package io.backbone.kit.examples.logging;
+package io.backbonehq.kit.examples.logging;
 
-import io.backbone.kit.logging.api.LogMethodEntry;
+import io.backbonehq.kit.logging.api.LogMethodEntry;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
