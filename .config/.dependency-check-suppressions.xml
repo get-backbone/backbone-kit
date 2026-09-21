@@ -50,4 +50,13 @@
         <packageUrl regex="true">^pkg:maven/io\.vertx/[^/]+@4\.5\.27$</packageUrl>
         <vulnerabilityName regex="true">(?s).*</vulnerabilityName>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+           snappy-java 1.1.10.8 (direct + Quarkus transitive).
+           CVE-2026-90559 High (CVSS ~8.7); Snappy.uncompress ByteBuffer OOB write. No fixed Maven release
+           beyond 1.1.10.8 yet (xerial/snappy-java#728 open). Revisit when a patch publishes.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.xerial\.snappy/snappy-java@1\.1\.10\.8$</packageUrl>
+        <cve>CVE-2026-90559</cve>
+    </suppress>
 </suppressions>

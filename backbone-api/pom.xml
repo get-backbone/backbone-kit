@@ -30,7 +30,7 @@
              comes from that copy. Generated code (protoc) must use the same line. Do not bump above BOM
              without checking quarkus.class-loading or Quarkus release notes. -->
         <protobuf.version>4.32.1</protobuf.version>
-        <snappy.version>1.1.10.7</snappy.version>
+        <snappy.version>1.1.10.8</snappy.version>
     </properties>
 
     <dependencyManagement>
