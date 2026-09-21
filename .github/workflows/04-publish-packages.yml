@@ -20,7 +20,7 @@ jobs:
           ref: main  # check out the branch, not detached HEAD
       # Same key as 03-release-bump (git signing). Here it signs Maven artifacts (.asc) for Central + GHP.
       # Repo secrets: GPG_PRIVATE_KEY (armoured or base64), GPG_PASSPHRASE
-      # Central Portal token: CENTRAL_USERNAME / CENTRAL_PASSWORD (server id `central`)
+      # Central Portal token: MVN_CENTRAL_USERNAME / MVN_CENTRAL_PASSWORD (server id `central`)
       # GHP: PAT_BACKBONE_DEPLOY (server id `github`)
       - uses: crazy-max/ghaction-import-gpg@v7
         with:
@@ -33,8 +33,8 @@ jobs:
             <servers>
               <server>
                 <id>central</id>
-                <username>${{ secrets.CENTRAL_USERNAME }}</username>
-                <password>${{ secrets.CENTRAL_PASSWORD }}</password>
+                <username>${{ secrets.MVN_CENTRAL_USERNAME }}</username>
+                <password>${{ secrets.MVN_CENTRAL_PASSWORD }}</password>
               </server>
               <server>
                 <id>github</id>
