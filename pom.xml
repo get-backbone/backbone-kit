@@ -355,7 +355,7 @@
     </build>
 
     <profiles>
-        <!-- Maven Central via Portal plugin. Deploy: mvn deploy -Pcentral (manual Publish in Portal until autoPublish enabled). -->
+        <!-- Maven Central. Deploy: mvn deploy -Pcentral -->
         <profile>
             <id>central</id>
             <build>
@@ -403,15 +403,14 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <!-- First Central cut: validate in Portal, then Publish manually. Flip for CI later. -->
-                            <autoPublish>false</autoPublish>
+                            <autoPublish>true</autoPublish>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
 
-        <!-- GitHub Packages (existing consumers). Deploy: mvn deploy -Pgithub. Skip sources/javadoc — public repo is the source of truth. -->
+        <!-- GitHub Packages. Deploy: mvn deploy -Pgithub. Skips sources/javadoc -->
         <profile>
             <id>github</id>
             <distributionManagement>
